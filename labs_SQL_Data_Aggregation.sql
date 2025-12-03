@@ -3,6 +3,8 @@ use Sakila ;
 -- Challenge 1 -- 
 -- You need to use SQL built-in functions to gain insights relating to the duration of movies:
 -- 1.1 Determine the shortest and longest movie durations and name the values as max_duration and min_duration.
+-- 1.1 Shortest and longest movie durations (max_duration and min_duration)
+
 select max(length) as max_duration, min(length) as min_duration
 from sakila.film;
 
@@ -48,7 +50,7 @@ order by title asc;
 -- concatenated first and last names of customers, along with the first 3 characters of their email address, so that you can address them by their first name and use their email 
 -- address to send personalized recommendations. The results should be ordered by last name in ascending order to make it easier to use the data.
 
-select *, concat(first_name, ' ', last_name, ' ', left(email, 3)) as 'identification'
+select concat(first_name, ' ', last_name, ' ', left(email, 3)) as email_prefix
 from sakila.customer
 order by last_name asc;
 
